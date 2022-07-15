@@ -1,0 +1,29 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgba(132, 200, 255, 0.808);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sketch-device {
+  width: 550px;
+  height: 650px;
+  border-top: 60px solid red;
+  border-bottom: 60px solid red;
+  border-left: 50px solid red;
+  border-right: 50px solid red;
+  border-radius: 10px;
+  box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.589);
+  background-color: #ddd;
+}
