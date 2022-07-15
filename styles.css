@@ -1,9 +1,5 @@
-html {
-  box-sizing: border-box;
-}
-
 *, *::before, *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -17,8 +13,9 @@ body {
 }
 
 .sketch-device {
-  width: 550px;
-  height: 650px;
+  box-sizing: content-box;
+  width: 500px;
+  height: 500px;
   border-top: 60px solid red;
   border-bottom: 60px solid red;
   border-left: 50px solid red;
