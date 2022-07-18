@@ -34,5 +34,8 @@
     - You should be able to enter 64 and have a brand new 64x64 grid pop up without changing the total amount of pixels used.
  */
 
-newDiv = document.createElement('div');
+
+const sketchDevice = document.querySelector('.sketch-device');
+const gridDiv = document.createElement('div');
+gridDiv.className = 'grid-div';
 
