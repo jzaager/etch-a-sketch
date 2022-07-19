@@ -75,7 +75,19 @@ body {
 }
 
 .game-buttons.color-select {
-  margin-right: 15px;
+  position: relative;
+  right: -245px;
+}
+
+#color-input {
+  opacity: 0%;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  position: relative;
+  top: -85px;
+  right: 15px;
+  padding: 10px;
 }
 
 .grid-div {

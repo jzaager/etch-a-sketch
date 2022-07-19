@@ -48,7 +48,10 @@ function defaultGrid() {
   makeGrid(16);
 }
 
+
 makeGrid(prompt("Grid size?"));
+
+// Make a grid based on an input amount
 function makeGrid(num) {
   const lenHeight = sketchWidth / num;
   newDiv.style.width = lenHeight + "px";
