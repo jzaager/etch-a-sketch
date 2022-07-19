@@ -6,20 +6,6 @@
       - Flexbox to arrange grid?
       - Or learn CSS grid!
 
-    newDiv = CREATE ELEMENT('DIV')
-    
-    For i<17
-      For j<17
-        Append the newDiv to the parent container
-        Add class list to the variable (and to CSS)
-        
-        // Add Eventlisteners for "mouse-enter" (I think)
-        to all the newDivs
-        // (Maybe make this a separate function)
-
-        When mouse enters newDiv target
-          newDiv.style.backgroundColor = 'black'?
-
 3.  Add a button to the top of the screen that will send the 
   user a popup asking for the number of squares per side for 
   the new grid. Once entered, the existing grid should be 
@@ -41,7 +27,17 @@ const sketchProps = window.getComputedStyle(sketchDevice, null);
 const sketchWidthPX = sketchProps.getPropertyValue('width');
 const sketchWidth = sketchWidthPX.slice(0, -2);
 const newDiv = document.createElement('div');
+const clearBtn = document.querySelector('.clear');
+const colorBtn = document.querySelector('.color-select');
 
+
+clearBtn.addEventListener('click', () => {
+  const grid = document.querySelectorAll('.grid-div');
+  for (let i = 0; i < grid.length; i++) {
+    grid[i].style.backgroundColor = '#ddd';
+  }
+  console.log("clicked")
+});
 
 newDiv.className = 'grid-div';
 

@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgba(132, 200, 255, 0.808);
+  background-color: rgba(132, 200, 255, 0.699);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -70,16 +70,14 @@ body {
   box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.589);
 }
 
-.game-buttons.left {
+.game-buttons.clear {
   margin-left: 15px;
 }
 
-.game-buttons.right {
+.game-buttons.color-select {
   margin-right: 15px;
 }
 
 .grid-div {
   border: 1px solid black;
- /*  height: 31.25px;
-  width: 31.25px; */
 }
