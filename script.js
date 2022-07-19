@@ -36,44 +36,33 @@
  */
 
 
-const sketchDevice = document.querySelector('.sketch-area-border');
+const sketchDevice = document.querySelector('.sketch-device');
+const sketchProps = window.getComputedStyle(sketchDevice, null);
+const sketchWidthPX = sketchProps.getPropertyValue('width');
+const sketchWidth = sketchWidthPX.slice(0, -2);
 const newDiv = document.createElement('div');
-const newRow = document.createElement('div');
-const newCol = document.createElement('div');
+
 
 newDiv.className = 'grid-div';
-newRow.className = 'row-div';
-newCol.className = 'col-div';
 
-//defaultGrid();
+
+// defaultGrid();
 // Creates 16x16 grid
 function defaultGrid() {
-  for (let i = 0; i < 256; i++) {
-    const grid = newDiv.cloneNode(true);
-    sketchDevice.appendChild(grid);
-  }
+  makeGrid(16);
 }
 
 makeGrid(prompt("Grid size?"));
 function makeGrid(num) {
+  const lenHeight = sketchWidth / num;
+  newDiv.style.width = lenHeight + "px";
+  newDiv.style.height = lenHeight + "px";
+
   for (let i = 0; i < (num*num); i++) {
-    const width = 500 / num;
-    newDiv.style.width = width + "px";
-    newDiv.style.height = width + "px";
     const grid = newDiv.cloneNode(true);
     sketchDevice.appendChild(grid);
-    console.log(newDiv.width);
+    grid.addEventListener('mouseover', () => {
+      grid.style.backgroundColor = 'black';
+    });
   }
 }
-
-
-
-
-
-
-// CREATE 1 ROW
-// CREATE 16 ROWS
-// CREATE 1 COLUMN
-// CREATE 16 COLUMNS
-// FILL ROWS WITH DIVS
-// FILL COLUMNS WITH DIVS
