@@ -1,4 +1,4 @@
-*, *::before, *::after {
+*, ::before, ::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -27,10 +27,22 @@ body {
   width: 500px;
   height: 500px;
   border-top: 70px solid red;
-  border-bottom: 70px solid red;
+  border-bottom: 80px solid red;
   border-left: 50px solid red;
   border-right: 50px solid red;
   border-radius: 10px;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.sketch-area-border {
+  box-sizing: content-box;
+  width: 500px;
+  height: 500px;
   background-color: #ddd;
   display: flex;
   flex-direction: row;
@@ -53,14 +65,21 @@ body {
   width: 55px;
   height: 55px;
   position: relative;
-  top: -70px;
+  top: -85px;
   margin: 10px;
   box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.589);
 }
 
+.game-buttons.left {
+  margin-left: 15px;
+}
+
+.game-buttons.right {
+  margin-right: 15px;
+}
+
 .grid-div {
-  box-sizing: content-box;
   border: 1px solid black;
-  width: 1em;
-  height: 1em;
+ /*  height: 31.25px;
+  width: 31.25px; */
 }
