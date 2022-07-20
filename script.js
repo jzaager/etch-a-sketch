@@ -21,31 +21,13 @@
     - You should be able to enter 64 and have a brand new 64x64 grid pop up without changing the total amount of pixels used.
  */
 
-
 const sketchDevice = document.querySelector('.sketch-device');
 const sketchProps = window.getComputedStyle(sketchDevice, null);
-const sketchWidthPX = sketchProps.getPropertyValue('width');
-const sketchWidth = sketchWidthPX.slice(0, -2);
+const sketchWidth = sketchProps.getPropertyValue('width').slice(0, -2);
 const newDiv = document.createElement('div');
 const clearBtn = document.querySelector('.clear');
 const colorBtn = document.querySelector('#color-input');
 let penColor = colorBtn.value;
-
-colorBtn.addEventListener('change', changeBgColor);
-
-function changeBgColor(e) {
-  const grid = document.querySelectorAll('.grid-div');
-  for (let i = 0; i < grid.length; i++) {
-    penColor = e.target.value;
-  }
-}
-
-clearBtn.addEventListener('click', () => {
-  const grid = document.querySelectorAll('.grid-div');
-  for (let i = 0; i < grid.length; i++) {
-    grid[i].style.backgroundColor = '#ddd';
-  }
-});
 
 newDiv.className = 'grid-div';
 
@@ -56,7 +38,6 @@ function defaultGrid() {
   makeGrid(16);
 }
 
-
 makeGrid(prompt("Grid size?"));
 
 // Make a grid based on an input amount
@@ -66,10 +47,20 @@ function makeGrid(num) {
   newDiv.style.height = lenHeight + "px";
 
   for (let i = 0; i < (num*num); i++) {
-    const grid = newDiv.cloneNode(true);
-    sketchDevice.appendChild(grid);
-    grid.addEventListener('mouseover', e => {
-      grid.style.backgroundColor = penColor;
+    const gridDivs = newDiv.cloneNode(true);
+    sketchDevice.appendChild(gridDivs);
+    gridDivs.addEventListener('mouseover', e => {
+      gridDivs.style.backgroundColor = penColor;
     });
+  }
+}
+
+const grid = document.querySelectorAll('.grid-div');
+colorBtn.addEventListener('change', e => penColor = e.target.value);
+clearBtn.addEventListener('click', clearGrid);
+
+function clearGrid() {
+  for (div of grid) {
+    div.style.backgroundColor = '#ddd';
   }
 }
