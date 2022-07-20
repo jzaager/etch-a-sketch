@@ -28,15 +28,23 @@ const sketchWidthPX = sketchProps.getPropertyValue('width');
 const sketchWidth = sketchWidthPX.slice(0, -2);
 const newDiv = document.createElement('div');
 const clearBtn = document.querySelector('.clear');
-const colorBtn = document.querySelector('.color-select');
+const colorBtn = document.querySelector('#color-input');
+let penColor = colorBtn.value;
 
+colorBtn.addEventListener('change', changeBgColor);
+
+function changeBgColor(e) {
+  const grid = document.querySelectorAll('.grid-div');
+  for (let i = 0; i < grid.length; i++) {
+    penColor = e.target.value;
+  }
+}
 
 clearBtn.addEventListener('click', () => {
   const grid = document.querySelectorAll('.grid-div');
   for (let i = 0; i < grid.length; i++) {
     grid[i].style.backgroundColor = '#ddd';
   }
-  console.log("clicked")
 });
 
 newDiv.className = 'grid-div';
@@ -60,8 +68,8 @@ function makeGrid(num) {
   for (let i = 0; i < (num*num); i++) {
     const grid = newDiv.cloneNode(true);
     sketchDevice.appendChild(grid);
-    grid.addEventListener('mouseover', () => {
-      grid.style.backgroundColor = 'black';
+    grid.addEventListener('mouseover', e => {
+      grid.style.backgroundColor = penColor;
     });
   }
 }
