@@ -88,8 +88,27 @@ body {
   top: -85px;
   right: 15px;
   padding: 10px;
+  z-index: 3;
 }
 
 .grid-div {
   border: 1px solid black;
+}
+
+.slider-wrapper {
+  position: relative;
+  left: 34%;
+  top: -3.5rem;
+  font-size: 1.4em;
+  color: black;
+}
+
+.current-slider-val {
+  background-color: lightgray;
+}
+
+.game-buttons:hover,
+.slider:hover,
+#color-input:hover {
+  cursor: pointer;
 }

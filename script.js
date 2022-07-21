@@ -27,10 +27,16 @@ const sketchWidth = sketchProps.getPropertyValue('width').slice(0, -2);
 const newDiv = document.createElement('div');
 const clearBtn = document.querySelector('.clear');
 const colorBtn = document.querySelector('#color-input');
+const slider = document.querySelector('.slider');
+const currentSliderVal = document.querySelector('.current-slider-val');
 let penColor = colorBtn.value;
 
 newDiv.className = 'grid-div';
+currentSliderVal.textContent = slider.value;
 
+slider.addEventListener('change', () => {
+  currentSliderVal.textContent = slider.value;
+});
 
 // defaultGrid();
 // Creates 16x16 grid
@@ -38,7 +44,7 @@ function defaultGrid() {
   makeGrid(16);
 }
 
-makeGrid(prompt("Grid size?"));
+makeGrid(slider.value);
 
 // Make a grid based on an input amount
 function makeGrid(num) {
