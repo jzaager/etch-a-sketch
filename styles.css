@@ -91,24 +91,51 @@ body {
   z-index: 3;
 }
 
-.grid-div {
+/* .grid-div {
   border: 1px solid black;
-}
+} */
 
 .slider-wrapper {
   position: relative;
-  left: 34%;
-  top: -3.5rem;
+  left: 26%;
+  top: -4.2rem;
   font-size: 1.4em;
   color: black;
 }
 
+.slider {
+  width: 40%;
+}
+
 .current-slider-val {
-  background-color: lightgray;
+  text-align: center;
+  margin-top: -80px;
+  z-index: 3;
 }
 
 .game-buttons:hover,
 .slider:hover,
 #color-input:hover {
   cursor: pointer;
+}
+
+.rainbow {
+  position: relative;
+  right: -210px;
+  top: 20px;
+  border-radius: 20%;
+  height: 65px;
+  width: 185px;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+  background: repeating-linear-gradient(
+    115deg,
+    red 16%,
+    orange 33%,
+    yellow 50%,
+    green 67%,
+    blue 80%,
+    violet 90%
+  );
 }

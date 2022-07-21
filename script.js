@@ -32,7 +32,7 @@ const currentSliderVal = document.querySelector('.current-slider-val');
 let penColor = colorBtn.value;
 
 newDiv.className = 'grid-div';
-currentSliderVal.textContent = slider.value;
+currentSliderVal.textContent += `${slider.value}x${slider.value}`;
 
 // Creates 16x16 grid
 function defaultGrid() {
@@ -66,9 +66,9 @@ function removeGrid() {
 
 colorBtn.addEventListener('change', e => penColor = e.target.value);
 clearBtn.addEventListener('click', clearGrid);
-
 slider.addEventListener('change', () => {
-  currentSliderVal.textContent = slider.value;
+  currentSliderVal.textContent = 'Grid size: ';
+  currentSliderVal.textContent += `${slider.value}x${slider.value}`;
   removeGrid();
   makeGrid(slider.value);
 });
