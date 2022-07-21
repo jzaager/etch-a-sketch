@@ -29,6 +29,7 @@ const clearBtn = document.querySelector('.clear');
 const colorBtn = document.querySelector('#color-input');
 const slider = document.querySelector('.slider');
 const currentSliderVal = document.querySelector('.current-slider-val');
+/* const rainbowBtn = document.querySelector('.rainbow'); */
 let penColor = colorBtn.value;
 
 newDiv.className = 'grid-div';
@@ -66,6 +67,7 @@ function removeGrid() {
 
 colorBtn.addEventListener('change', e => penColor = e.target.value);
 clearBtn.addEventListener('click', clearGrid);
+/* rainbowBtn.addEventListener('click', rainbowMode); */
 slider.addEventListener('change', () => {
   currentSliderVal.textContent = 'Grid size: ';
   currentSliderVal.textContent += `${slider.value}x${slider.value}`;
@@ -79,3 +81,6 @@ function clearGrid() {
     div.style.backgroundColor = '#ddd';
   }
 }
+
+/* function rainbowMode() {
+} */

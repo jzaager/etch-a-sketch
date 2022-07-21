@@ -119,7 +119,7 @@ body {
   cursor: pointer;
 }
 
-.rainbow {
+/* .rainbow {
   position: relative;
   right: -210px;
   top: 20px;
@@ -138,4 +138,4 @@ body {
     blue 80%,
     violet 90%
   );
-}
+} */
