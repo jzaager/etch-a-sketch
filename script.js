@@ -34,18 +34,12 @@ let penColor = colorBtn.value;
 newDiv.className = 'grid-div';
 currentSliderVal.textContent = slider.value;
 
-slider.addEventListener('change', () => {
-  currentSliderVal.textContent = slider.value;
-});
-
-// defaultGrid();
 // Creates 16x16 grid
 function defaultGrid() {
   makeGrid(16);
 }
 
 makeGrid(slider.value);
-
 // Make a grid based on an input amount
 function makeGrid(num) {
   const lenHeight = sketchWidth / num;
@@ -62,10 +56,25 @@ function makeGrid(num) {
 }
 
 const grid = document.querySelectorAll('.grid-div');
+
+function removeGrid() {
+  const grid = document.querySelectorAll('.grid-div');
+  for(div of grid) {
+    div.remove();
+  }
+}
+
 colorBtn.addEventListener('change', e => penColor = e.target.value);
 clearBtn.addEventListener('click', clearGrid);
 
+slider.addEventListener('change', () => {
+  currentSliderVal.textContent = slider.value;
+  removeGrid();
+  makeGrid(slider.value);
+});
+
 function clearGrid() {
+  const grid = document.querySelectorAll('.grid-div');
   for (div of grid) {
     div.style.backgroundColor = '#ddd';
   }
