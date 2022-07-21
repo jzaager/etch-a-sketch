@@ -56,8 +56,6 @@ function makeGrid(num) {
   }
 }
 
-const grid = document.querySelectorAll('.grid-div');
-
 function removeGrid() {
   const grid = document.querySelectorAll('.grid-div');
   for(div of grid) {
