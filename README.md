@@ -4,7 +4,7 @@
 
 Another classic game brought to life on this very internet.
 
-Live version coming in the very near future.
+[Live version](https://jzaager.github.io/etch-a-sketch/)
 
 ### Getting familiar with JavaScript
 
