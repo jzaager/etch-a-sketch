@@ -13,6 +13,7 @@ newDiv.className = 'grid-div';
 currentSliderVal.textContent += `${slider.value}x${slider.value}`;
 
 makeGrid(slider.value);
+
 // Make a grid based on an input amount
 function makeGrid(num) {
   const lenHeight = sketchWidth / num;
@@ -32,13 +33,19 @@ function removeGrid() {
   const grid = document.querySelectorAll('.grid-div');
   for(div of grid) {
     div.remove();
+    penColor = 'black';
   }
 }
 
-colorBtn.addEventListener('change', e => penColor = e.target.value);
 clearBtn.addEventListener('click', clearGrid);
 rainbowBtn.addEventListener('click', rainbowMode);
 slider.addEventListener('change', changeGridSize);
+colorBtn.addEventListener('change', e => {
+  const grid = document.querySelectorAll('.grid-div');
+  penColor = e.target.value;
+  for (div of grid)
+  div.removeEventListener('mouseover', rainbowPen);
+});
 
 function changeGridSize() {
   currentSliderVal.textContent = 'Grid size: ';
@@ -51,6 +58,8 @@ function clearGrid() {
   const grid = document.querySelectorAll('.grid-div');
   for (div of grid) {
     div.style.backgroundColor = '#ddd';
+    penColor = 'black';
+    div.removeEventListener('mouseover', rainbowPen);
   }
 }
 
@@ -58,12 +67,14 @@ function rainbowMode() {
   const grid = document.querySelectorAll('.grid-div');
   const n = Math.floor((Math.random() * 255) + 1)
   for (let i = 0; i < grid.length; i++) {
-      grid[i].addEventListener('mouseover', () => {
-      grid[i].style.backgroundColor = `rgb(${getRandColor()}, ${getRandColor()}, ${getRandColor()})`;
-    });
+      grid[i].addEventListener('mouseover', rainbowPen);
   }
 }
 
 function getRandColor() {
   return Math.floor((Math.random() * 255) + 1);
+}
+
+function rainbowPen() {
+    penColor = `rgb(${getRandColor()}, ${getRandColor()}, ${getRandColor()})`;
 }
