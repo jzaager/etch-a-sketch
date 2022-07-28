@@ -24,7 +24,6 @@ HTML truly is the gift that keeps on giving. Takeaway here is learning about the
 * Range (slider)
 * Color (color-selector)
 
-**Future Features**
-
-* Media queries to allow mobile play.
-* Rainbow Button.
+#### Features added:
+* Rainbow button
+* Media query for screens 800px wide (not fully functional on mobile)
