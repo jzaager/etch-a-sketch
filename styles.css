@@ -161,8 +161,8 @@ body {
      
   .rainbow {
     position: absolute;
-    left: 35%;
-    top: 29.5%;
+    left: 42%;
+    top: 27.2%;
     height: 25px;
     width: 115px;
     font-size: 0.8em;
@@ -174,7 +174,7 @@ body {
     justify-content: flex-start;
     margin: 0;
     position: absolute;
-    bottom: 19%;
+    bottom: 15%;
   }
   
   .game-buttons {
@@ -185,31 +185,33 @@ body {
     height: 35px;
     box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.589);
     font-size: 0.7em;
+    position: relative;
   }
 
   .game-buttons.clear {
     margin: 0;
-    position: relative;
+        
   }
 
   .game-buttons.color-select {
     position: relative;
     left: 93.5%;
+    bottom: 20px
   }
 
   #color-input {
     position: relative;
     top: -85px;
-    right: -247px;
+    right: -246px;
     width: 35px;
     height: 35px;
   }
 
   .slider-wrapper {
     position: absolute;
-    left: 30%;
-    top: 66.5%;
-    font-size: 1.4em;
+    left: 40%;
+    top: 69%;
+    font-size: 1.1em;
     color: black;
   }
   
@@ -221,8 +223,9 @@ body {
     text-align: center;
     z-index: 3;
     position: absolute;
-    top: 80%;
-    left: 35%;
+    top: 84%;
+    left: 42%;
+    font-size: 0.9em;
   }
 
 }
