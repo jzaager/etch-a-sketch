@@ -39,18 +39,6 @@ body {
   align-items: flex-start;
 }
 
-.sketch-area-border {
-  box-sizing: content-box;
-  width: 500px;
-  height: 500px;
-  background-color: #ddd;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
 .button-container {
   display: flex;
   align-items: center;
@@ -138,4 +126,103 @@ body {
     blue 80%,
     violet 90%
   );
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width: 800px) {
+
+  #outer {
+    box-sizing: content-box;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgb(95, 95, 95);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 1px 10px 3px rgba(0, 0, 0, 0.589);
+  }
+  
+  .sketch-device {
+    box-sizing: content-box;
+    border: 30px solid red;
+    width: 290px;
+    height: 290px;
+  }    
+
+  .container {
+    box-sizing: border-box;
+    width: 290px;
+    height: 290px;
+  }
+
+  .grid-div {
+   box-sizing: border-box;
+} 
+     
+  .rainbow {
+    position: absolute;
+    left: 35%;
+    top: 29.5%;
+    height: 25px;
+    width: 115px;
+    font-size: 0.8em;
+  }
+
+  .button-container {
+    width: 300px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    position: absolute;
+    bottom: 19%;
+  }
+  
+  .game-buttons {
+    background-color: white;
+    margin: 0;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.589);
+    font-size: 0.7em;
+  }
+
+  .game-buttons.clear {
+    margin: 0;
+    position: relative;
+  }
+
+  .game-buttons.color-select {
+    position: relative;
+    left: 93.5%;
+  }
+
+  #color-input {
+    position: relative;
+    top: -85px;
+    right: -247px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .slider-wrapper {
+    position: absolute;
+    left: 30%;
+    top: 66.5%;
+    font-size: 1.4em;
+    color: black;
+  }
+  
+  .slider {
+    width: 50%;
+  }
+
+  .current-slider-val {
+    text-align: center;
+    z-index: 3;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+  }
+
 }
